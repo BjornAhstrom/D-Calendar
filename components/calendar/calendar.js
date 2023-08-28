@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, Modal } from "react-native";
 import { Calendar, LocaleConfig } from "react-native-calendars";
+import styles from "./calendar.style";
 
 LocaleConfig.locales["sv"] = {
   monthNames: [
@@ -153,12 +154,15 @@ const CustomDayComponent = ({ date, state, marking, theme }) => {
 
 const CustomCalendar = () => {
   return (
-    <Calendar
-      firstDay={1}
-      showWeekNumbers={true}
-      enableSwipeMonths={true}
-      dayComponent={CustomDayComponent}
-    />
+    <View style={styles.container}>
+      <Calendar
+        style={styles.calendar}
+        firstDay={1}
+        showWeekNumbers={true}
+        enableSwipeMonths={true}
+        dayComponent={CustomDayComponent}
+      />
+    </View>
   );
 };
 
