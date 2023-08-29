@@ -1,10 +1,10 @@
 import { View, Text } from "react-native";
-import CustomCalendar from "../components/calendar/calendar";
+import MainCalendar from "../components/mainCalendar/mainCalendar";
 
 const Home = () => {
   return (
     <View>
-      <CustomCalendar />
+      <MainCalendar />
     </View>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, Modal } from "react-native";
 import { Calendar, LocaleConfig } from "react-native-calendars";
-import styles from "./calendar.style";
+import styles from "./trackerCalendar.style";
 
 LocaleConfig.locales["sv"] = {
   monthNames: [
@@ -152,7 +152,7 @@ const CustomDayComponent = ({ date, state, marking, theme }) => {
   );
 };
 
-const CustomCalendar = () => {
+const TrackerCalendar = () => {
   return (
     <View style={styles.container}>
       <Calendar
@@ -166,4 +166,4 @@ const CustomCalendar = () => {
   );
 };
 
-export default CustomCalendar;
+export default TrackerCalendar;
