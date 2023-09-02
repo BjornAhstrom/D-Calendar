@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native-web";
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -8,6 +8,21 @@ const styles = StyleSheet.create({
     width: "90%",
     height: "90%",
     alignSelf: "center",
+  },
+  reminerCard: {
+    marginLeft: 5,
+    marginRight: 5,
+    borderColor: "pink",
+    borderBottomWidth: 1,
+    flexDirection: "row",
+  },
+  reminderText: {
+    padding: 3,
+    fontSize: 15,
+  },
+  checkBoxContainer: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
   },
 });
 

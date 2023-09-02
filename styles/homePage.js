@@ -1,7 +1,8 @@
-import { StyleSheet } from "react-native-web";
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 30,
     flexDirection: "column",
     height: "100%",
     width: "100%",
@@ -15,6 +16,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   leftBox: {
+    flex: 1,
     height: "100%",
     width: "50%",
   },
