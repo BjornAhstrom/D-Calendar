@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { View, FlatList, Text } from "react-native";
+import { View, FlatList, Text, TouchableOpacity } from "react-native";
 import RoundCheckbox from "../roundCheckbox/roundCheckbox";
 import styles from "../reminder/style.reminder";
 
@@ -82,7 +82,9 @@ const Reminder = () => {
                   toggleCheckbox(item.id);
                 }}
               />
-              <Text style={styles.reminderText}>{item.title}</Text>
+              <TouchableOpacity>
+                <Text style={styles.reminderText}>{item.title}</Text>
+              </TouchableOpacity>
             </View>
           </View>
         )}

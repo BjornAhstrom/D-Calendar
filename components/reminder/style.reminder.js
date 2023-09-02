@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   reminderText: {
     padding: 3,
-    fontSize: 15,
+    fontSize: 14,
   },
   checkBoxContainer: {
     flexDirection: "row",
