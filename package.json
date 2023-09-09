@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@react-native-community/datetimepicker": "^7.2.0",
+    "@react-native-firebase/firestore": "^18.3.2",
     "@react-native-picker/picker": "^2.5.0",
     "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
     "expo": "^49.0.3",
     "expo-constants": "~14.4.2",
     "expo-font": "^11.4.0",

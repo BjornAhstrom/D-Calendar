@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -14,11 +14,51 @@ import {
 } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import styles from "./style.agenda";
+import { db } from "../../firebase";
+import {
+  QuerySnapshot,
+  collection,
+  onSnapshot,
+  query,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 
 const Agenda = ({ date, close, isVisible }) => {
   const [selectedStartTime, setSelectedStartTime] = useState(new Date());
   const [selectedEndTime, setSelectedEndTime] = useState(new Date());
   const todaysDate = new Date();
+
+  const [names, setNames] = useState([]);
+
+  const handlePress = () => {
+    // useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const userDocRef = doc(db, "Users", "MURGbnizHvvnS8xMbjBf");
+        const userDocSnapshot = await getDoc(userDocRef);
+
+        if (userDocSnapshot.exists()) {
+          const userData = userDocSnapshot.data();
+          // Anta att användarnamnet är lagrat i "name" i användardokumentet
+          if (userData && userData.name) {
+            setNames([userData.name]);
+          }
+        }
+      } catch (error) {
+        console.error("Fel vid hämtning av användarnamn:", error);
+      }
+    };
+
+    fetchUserData();
+    //}, []);
+
+    //useEffect(() => {
+    names.forEach((name) => {
+      console.log("Användare:", name);
+    });
+    //}, [names]);
+  };
 
   const handleStartTimeChange = (event, newTime) => {
     if (Platform.OS === "android" && event.type === "dismissed") {
@@ -144,7 +184,7 @@ const Agenda = ({ date, close, isVisible }) => {
             </ScrollView>
           </KeyboardAvoidingView>
           <View style={styles.footer}>
-            <TouchableOpacity style={styles.closeBtn} onPress={close}>
+            <TouchableOpacity style={styles.closeBtn} onPress={handlePress}>
               <Text style={styles.closeBtnText}>Stäng</Text>
             </TouchableOpacity>
           </View>
