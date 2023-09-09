@@ -1,5 +1,5 @@
-import { View, Text } from "react-native";
-import { SafeAreaView } from "react-native";
+import React from "react";
+import { SafeAreaView, View } from "react-native";
 import styles from "../styles/homePage";
 import MainCalendar from "../components/mainCalendar/mainCalendar";
 import Habits from "../components/habits/habits";
